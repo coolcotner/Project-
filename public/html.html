@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Eduthon 2025 — Finomyy</title>
+<meta name="description" content="Eduthon 2025 — Where curiosity meets glory. Events: Gaming, Design, Web Dev, Photography, Debate, Ad-making. Free registration." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#071024; --bg2:#0b2138; --glass: rgba(255,255,255,0.04);
+    --accent:#7CFF6B; --accent2:#00FFF0; --muted:#b9c9da; --card:#0f2a44;
+    --maxw:1150px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; font-family:"Poppins",system-ui,-apple-system; background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(124,255,107,0.06), transparent 12%),
+    linear-gradient(180deg,var(--bg1),var(--bg2));
+    color:#eaf6ff; -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+    background-size: 600% 600%;
+    animation: aurora 25s ease infinite;
+  }
+  @keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+  /* Wrapper */
+  .wrap{width:min(var(--maxw),94vw); margin:0 auto; padding:28px 0 80px;}
+
+  #particles {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+  nav{
+    position:sticky; top:0; z-index:60; backdrop-filter: blur(8px);
+    background:linear-gradient(180deg, rgba(2,6,15,.6), rgba(2,6,15,.2));
+    border-bottom:1px solid rgba(255,255,255,.04);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:44px;height:44px;border-radius:10px;
+    background:linear-gradient(135deg,var(--accent2),var(--accent));
+    display:grid;place-items:center;font-weight:800;color:#012;
+    box-shadow:0 10px 30px rgba(0,0,0,.45);
+  }
+  .brand h1{font-size:1.05rem;margin:0;letter-spacing:.6px}
+  .nav-links{display:flex;gap:10px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600}
+  .nav-links a:hover{color:#fff;background:rgba(255,255,255,.03)}
+
+  /* HERO */
+  header.hero{padding:56px 0 44px; display:grid;grid-template-columns:1fr 420px; gap:28px;align-items:center}
+  .hero-left{padding:36px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));border:1px solid rgba(255,255,255,.04);backdrop-filter:blur(8px)}
+  .eyebrow{display:inline-flex;gap:10px;align-items:center;color:var(--accent);font-weight:700}
+  .title{font-size:clamp(1.6rem,3.8vw,2.6rem);line-height:1.02;margin:12px 0 8px;font-weight:800}
+  .lead{color:var(--muted);margin-bottom:18px}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.06);background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);color:#eaf6ff;font-weight:700}
+  .btn.primary{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#012;border:none;box-shadow:0 12px 30px rgba(0,255,240,.06)}
+  .hero-right{position:relative;border-radius:18px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);border:1px solid rgba(255,255,255,.04)}
+  .badge{position:absolute;right:18px;top:18px;background:rgba(0,0,0,.25);padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.04);font-weight:700}
+
+  /* GRID */
+  .grid{display:grid;gap:18px}
+  .two-col{grid-template-columns:repeat(2,1fr)}
+  .three-col{grid-template-columns:repeat(3,1fr)}
+
+  /* Cards */
+  .card{background:var(--card);border-radius:14px;padding:18px;border:1px solid rgba(255,255,255,.03);box-shadow:0 8px 26px rgba(2,6,15,.6)}
+  .card h3{margin:0 0 8px;font-size:1.05rem}
+  .muted{color:var(--muted);font-size:.95rem}
+  .card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s forwards;
+}
+
+/* Entry animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* width of scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05); /* track background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7CFF6B, #00FFF0, #B5179E);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(124,255,107,0.6);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00FFF0, #7CFF6B, #FF00FF);
+}
+
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-12px) scale(1.03) rotateX(2deg) rotateY(2deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4),
+              0 0 20px rgba(124,255,107,0.4);
+}
+
+
+  /* schedule */
+  .schedule-day{display:flex;gap:12px;align-items:flex-start}
+  .date-pill{min-width:82px;padding:10px;border-radius:10px;text-align:center;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);border:1px solid rgba(255,255,255,.03)}
+  .event-list{display:flex;flex-direction:column;gap:10px}
+
+  /* speakers/sponsors */
+  .people{display:flex;gap:12px;flex-wrap:wrap}
+  .person{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);padding:12px;border-radius:12px;min-width:160px}
+
+  /* registration form */
+  form.row{display:flex;flex-direction:column;gap:10px}
+  input,textarea,select{padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.06);background:transparent;color:#eaf6ff}
+  .form-actions{display:flex;gap:10px;align-items:center}
+
+  /* footer */
+  footer{margin-top:36px;padding:28px 0;color:var(--muted)}
+
+  /* responsiveness */
+  @media (max-width:980px){
+    header.hero{grid-template-columns:1fr; padding-top:36px}
+    .hero-right{order:2}
+  }
+  @media (max-width:560px){
+    .nav-links{display:none}
+    .three-col{grid-template-columns:1fr}
+    .two-col{grid-template-columns:1fr}
+  }
+
+  /* small touches */
+  .glow{box-shadow:0 12px 40px rgba(124,255,107,.06)}
+  .small{font-size:.9rem}
+
+  .card {
+  transition: transform .2s ease, box-shadow .2s ease;
+  transform-style: preserve-3d;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #7CFF6B, #00FFF0);
+  border: none;
+  border-radius: 6%;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(124,255,107,0.5), 0 0 20px rgba(0,255,240,0.3);
+}
+
+/* Hover Glow Burst */
+.btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(124,255,107,0.9),
+              0 0 40px rgba(0,255,240,0.7),
+              0 0 80px rgba(181,23,158,0.6);
+}
+
+/* Ripple Effect */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
+}
+
+.btn:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+  transition: 0s;
+}
+
+
+</style>
+</head>
+<body>
+
+  
+  </div>
+  <nav>
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <div class="logo">E</div>
+        <div>
+          <h1>Eduthon 2025</h1>
+          <div class="small muted">by Finomyy — Where curiosity meets glory</div>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#theme">Theme</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#register" class="primary">Register</a>
+      </div>
+    </div>
+  </nav>
+<!-- Chat Toggle Button -->
+<button id="chatToggle" style="position: fixed; bottom: 20px; right: 20px; z-index:1000;">💬 Chat</button>
+
+<!-- Chat Popup -->
+<div id="chatPopup" style="display:none; position:fixed; bottom:70px; right:20px; width:300px; max-height:400px; background: rgba(0,0,0,0.8); color:white; border-radius:12px; box-shadow: 0 0 20px #00c6ff; display:flex; flex-direction:column; overflow:hidden; z-index:1000;">
+  <div id="usernameDisplay" style="padding:10px; background: rgba(0,0,0,0.9); text-align:center; font-weight:bold;"></div>
+
+  <div id="messages" style="flex:1; padding:10px; overflow-y:auto; font-size:14px;"></div>
+  <form id="form" style="display:flex; padding:10px; background: rgba(0,0,0,0.9);">
+    <input id="input" autocomplete="off" placeholder="Type a message..." style="flex:1; padding:6px; border-radius:8px; border:none; outline:none;">
+    <button type="submit" style="margin-left:5px; border:none; border-radius:8px; padding:6px 10px; background:#00c6ff; color:white; cursor:pointer;">Send</button>
+  </form>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  const messagesDiv = document.getElementById("messages");
+  const form = document.getElementById("form");
+  const input = document.getElementById("input");
+  const usernameDisplay = document.getElementById("usernameDisplay");
+  const chatPopup = document.getElementById("chatPopup");
+  const chatToggle = document.getElementById("chatToggle");
+
+  // Toggle chat popup
+  chatToggle.addEventListener("click", () => {
+    chatPopup.style.display = chatPopup.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Username
+  let username = localStorage.getItem("usernam") || prompt("Enter your username:") || "Anonymous";
+  localStorage.setItem("usernam", username);
+  usernameDisplay.textContent = "You are: " + username +   ".Discussion about the event";
+
+  socket.emit("join", username);
+
+  // Load old messages
+  socket.on("loadMessages", (msgs) => {
+    messagesDiv.innerHTML = "";
+    msgs.forEach(msg => addMessage(msg.user, msg.text, msg.system));
+  });
+
+  // New message
+  socket.on("chat message", (msg) => {
+    addMessage(msg.user, msg.text, msg.system);
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if(input.value.trim()){
+      socket.emit("chat message", { user: username, text: input.value });
+      input.value = "";
+    }
+  });
+
+  function addMessage(user, text, system=false){
+    const div = document.createElement("div");
+    div.style.margin="4px 0";
+    if(system){
+      div.style.color="#ffcc00";
+      div.style.fontStyle="italic";
+      div.textContent = text;
+    } else {
+      div.textContent = user + ": " + text;
+    }
+    messagesDiv.appendChild(div);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  }
+</script>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-left card">
+        <div class="eyebrow">22–26 Sep 2025 • Online • Free</div>
+        <h2 class="title">Eduthon 2025 — Where Curiosity Meets Glory</h2>
+        <p class="lead muted">
+          An open-for-all festival of knowledge, creativity and competition — featuring Gaming (XPlode), Design (PixelForge),
+          Web Development (WebCraft), Photography (ShutterSoul), Parliamentary Debate (VerbalClash), and Ad-Making (AdRush).
+          Prize pool: <strong>₹65,000</strong>. Free registration. :contentReference[oaicite:3]{index=3}
+        </p>
+
+        <div class="btn-row">
+          <a class="btn primary" href="#register">Register Now</a>
+          <a class="btn" href="#schedule">See Schedule</a>
+          <a class="btn" href="https://forms.gle/CXyiVvfuxesHqm8h9" target="_blank" rel="noopener">Official Form</a>
+        </div>
+        <div style="margin-top:14px" class="muted small">
+          Note: All participants must join the event Discord server; submission links for online events will be posted there. 
+        </div>
+      </div>
+      <canvas id="particles"></canvas>
+
+      <aside class="hero-right">
+        <div class="badge">Prize Pool ₹65,000</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="card">
+            <h3>Quick Events</h3>
+            <div class="muted small">
+              PixelForge — Design (submission).<br>
+              WebCraft — Web Dev (submission deadline 25 Sep, 8PM).<br>
+              ShutterSoul — Photography (submission deadline 25 Sep, 8PM). 
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Gaming — XPlode</h3>
+            <div class="muted small">
+              Team of 2 • Rounds on 22–24 Sep (online). Open for all • Free. 
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Contact</h3>
+            <div class="muted small">
+              finomyy@gmail.com<br>
+              Discord: <a href="https://discord.com/invite/pcZWbQukr5" target="_blank" style="color:var(--accent2)">Join</a><br>
+              Instagram / LinkedIn / YouTube links in footer. 
+          </div>
+        </div>
+      </aside>
+    </header>
+   
+    <script>
+    let votes = [];
+    const range = document.getElementById("exciteRange");
+    const valueText = document.getElementById("rangeValue");
+    
+    range.oninput = () => {
+      valueText.innerText = "Excitement: " + range.value + "%";
+    };
+    
+    function submitExcitement(){
+      const rating = parseInt(range.value);
+      votes.push(rating);
+      
+      // Calculate average
+      let sum = votes.reduce((a,b)=>a+b,0);
+      let avg = Math.round(sum / votes.length);
+      
+      document.getElementById("hypeBar").style.width = avg + "%";
+      document.getElementById("hypeStats").innerText = `Average Excitement: ${avg}% (${votes.length} votes)`;
+    }
+    </script>
+    
+    <!-- THEME / ABOUT -->
+    <section id="theme" class="grid card">
+      <div>
+        <h3>Event Theme</h3>
+        <p class="muted">
+          Eduthon 2025 is a festival to push students beyond textbooks — build, design, debate, and play.
+          Themes for specific contests (e.g., PixelForge, AdRush, ShutterSoul) will be revealed on 22nd September on Discord & WhatsApp groups. :contentReference[oaicite:8]{index=8}
+        </p>
+      </div>
+
+      <div>
+        <h3>Venue Details</h3>
+        <p class="muted">
+          Mode: <strong>Online</strong> for most events. Specific rounds & submission portals will be shared on Discord.
+          Keep your schedule free between <strong>22–26 September 2025</strong>. 
+        </p>
+      </div>
+    </section>
+    <canvas id="particles"></canvas>
+    
+    <div style="max-width:400px;margin:20px auto;padding:16px;border-radius:12px;background:#0f2a44;">
+      <h3>Ask Eduthon Bot 🤖</h3>
+      <div id="chatBox" style="height:200px;overflow-y:auto;border:1px solid #333;padding:10px;margin:10px 0;background:#071024"></div>
+      <input id="question" placeholder="Ask about Eduthon 2025..." style="width:75%;padding:8px;border-radius:8px;border:none;">
+      <button onclick="askBot()" style="padding:8px 12px;border:none;border-radius:8px;background:#7CFF6B;color:#012;font-weight:bold;">Send</button>
+    </div>
+    
+    <!-- SCHEDULE -->
+    <section id="schedule" class="card">
+      <h3>Schedule (at a glance)</h3>
+      <p class="muted">Events run across 22–26 September 2025. Below are key dates & modes (from the event brief).</p>
+
+      <div class="grid two-col" style="margin-top:14px">
+        <div class="card">
+          <div class="schedule-day">
+            <div class="date-pill">
+              <div style="font-weight:800">22 Sep</div>
+              <div class="muted small">Mon</div>
+            </div>
+            <div>
+              <strong>XPlode — Gaming</strong><br>
+              Round 1 online (teams of 2). See discord for links & match schedule. 
+            </div>
+          </div>
+
+          <hr style="opacity:.06;margin:12px 0">
+
+          <div class="schedule-day">
+            <div class="date-pill"><div style="font-weight:800">23 Sep</div><div class="muted small">Tue</div></div>
+            <div><strong>XPlode — Round 2</strong><br>Online matches continue.</div>
+          </div>
+
+          <hr style="opacity:.06;margin:12px 0">
+
+          <div class="schedule-day">
+            <div class="date-pill"><div style="font-weight:800">24 Sep</div><div class="muted small">Wed</div></div>
+            <div><strong>XPlode — Round 3</strong><br>Online — concluding rounds.</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="schedule-day">
+            <div class="date-pill"><div style="font-weight:800">25 Sep</div><div class="muted small">Thu</div></div>
+            <div>
+              <strong>AdRush / VerbalClash / Submissions</strong><br>
+              AdRush event date & VerbalClash day(s). Submission deadlines for PixelForge, WebCraft, ShutterSoul: <strong>25 Sep, 8:00 PM</strong>. 
+            </div>
+          </div>
+
+          <hr style="opacity:.06;margin:12px 0">
+
+          <div class="schedule-day">
+            <div class="date-pill"><div style="font-weight:800">26 Sep</div><div class="muted small">Fri</div></div>
+            <div><strong>Wrap-up / Announcements</strong><br>Final results & prizes announced. </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPEAKERS / TEAM -->
+    <section id="speakers" class="card">
+      <h3>Organizers & Core Team </h3>
+      <p class="muted"> Finomyy founders and core team members</p>
+
+      <div class="people" style="margin-top:12px">
+        <div class="person">
+          <strong>Rachit R Narnoli</strong><div class="muted small">Co-founder & CEO, Finomyy</div>
+        </div>
+        <div class="person">
+          <strong>Aahaan Kamra</strong><div class="muted small">Co-founder & COO</div>
+        </div>
+        <div class="person">
+          <strong>Ishaan Garg</strong><div class="muted small">Chief Marketing Officer</div>
+        </div>
+        <div class="person">
+          <strong>Bharti Gulia</strong><div class="muted small">Managing Director</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPONSORS -->
+    
+
+    <!-- EVENTS DETAIL CARDS -->
+    <section class="grid two-col" style="margin-top:18px">
+      <div class="card">
+        <h3>XPlode — Gaming</h3>
+        <p class="muted">Team size: 2 • Open for all • Free. Rounds: 22–24 Sep (online). Details & rounds posted on Discord. </p>
+      </div>
+
+      <div class="card">
+        <h3>VerbalClash — Parliamentary Debate</h3>
+        <p class="muted">Team size: 3 • Mode: Online (25 Sep). Each team gets 15 minutes prep after motion announcement; follow rules from brief. </p>
+      </div>
+
+      <div class="card">
+        <h3>PixelForge — Design</h3>
+        <p class="muted">Individual or team of 2 • Online submission • Deadline: 25 Sep, 8PM. Theme revealed on 22 Sep on Discord. :contentReference</p>
+      </div>
+
+      <div class="card">
+        <h3>WebCraft — Web Development</h3>
+        <p class="muted">Team of 2 • Online submission • Deadline: 25 Sep, 8PM. Build a functional, creative web solution. AI use is allowed per brief. </p>
+      </div>
+
+      <div class="card">
+        <h3>ShutterSoul — Photography</h3>
+        <p class="muted">Team of 2 • Online submission • Deadline: 25 Sep, 8PM. Theme revealed on 22 Sep. Capture a story with your lens. </p>
+      </div>
+
+      <div class="card">
+        <h3>AdRush — Ad-making</h3>
+        <p class="muted">Team size: 2–3 • Mode: Online submission (25 Sep). Ad length 30s–3min. AI-generated ads are strictly prohibited per rules in the brief. </p>
+      </div>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section id="register" class="card" style="margin-top:18px">
+      <h3>Register</h3>
+      <p class="muted">Free registration — official form link below . </p>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+        <a class="btn primary" href="https://forms.gle/CXyiVvfuxesHqm8h9" target="_blank" rel="noopener">Open Official Google Form</a>
+        
+      </div>
+
+      
+    </section>
+
+    <!-- SOCIALS -->
+    <section class="card" style="margin-top:18px">
+      <h3>Socials & Contact</h3>
+      <p class="muted">Links from the PDF (Discord, LinkedIn, Instagram, website, YouTube). Join Discord for all submission links and live updates. :contentReference[oaicite:22]{index=22}</p>
+
+      <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+        <a class="btn" href="https://discord.com/invite/pcZWbQukr5" target="_blank">Discord</a>
+        <a class="btn" href="http://www.finomyy.com/" target="_blank">Official Site</a>
+        <a class="btn" href="https://www.linkedin.com/company/finomyy/" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://www.instagram.com/finomyy/" target="_blank">Instagram</a>
+        <a class="btn" href="http://www.youtube.com/@Finomyy" target="_blank">YouTube</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="wrap">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+        <div>
+          <strong>Eduthon 2025</strong> • by Finomyy — Where curiosity meets glory. Prize Pool: ₹65,000. 
+        </div>
+        <div class="muted small">
+          <div>Core team: Rachit R Narnoli • Aahaan Kamra • Ishaan Garg • Bharti Gulia</div>
+          <div style="margin-top:8px">Email: finomyy@gmail.com</div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+<script>
+  // Load/save RSVP locally (easy to replace with API)
+  const saveBtn = document.getElementById('saveRsvp');
+  const clearBtn = document.getElementById('clearRsvp');
+  const loadBtn = document.getElementById('rsvpLoad');
+  const NAME = 'eduthon_rsvp_v1';
+
+  function getEl(id){return document.getElementById(id)}
+  const nameIn = getEl('name'), emailIn = getEl('email'), eventIn = getEl('eventChoice');
+
+  saveBtn.addEventListener('click', ()=>{
+    if(!nameIn.value || !emailIn.value){
+      alert('Please enter name and email to save RSVP.');
+      return;
+    }
+    const payload = {name:nameIn.value,email:emailIn.value,event:eventIn.value,ts:Date.now()};
+    localStorage.setItem(NAME, JSON.stringify(payload));
+    alert('RSVP saved locally ✅ — you can also open the official Google Form.');
+  });
+
+  clearBtn.addEventListener('click', ()=>{
+    localStorage.removeItem(NAME);
+    nameIn.value=''; emailIn.value=''; eventIn.value='';
+    alert('Cleared local RSVP.');
+  });
+
+  loadBtn.addEventListener('click', ()=>{
+    const raw = localStorage.getItem(NAME);
+    if(!raw){ alert('No saved RSVP found.'); return; }
+    const p = JSON.parse(raw);
+    nameIn.value = p.name || ''; emailIn.value = p.email || ''; eventIn.value = p.event || '';
+    alert('Loaded saved RSVP. Edit & save again if needed.');
+  });
+
+  // Smooth anchor scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href');
+      if(id.length>1){
+        e.preventDefault();
+        document.querySelector(id).scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    });
+  });
+
+  // Small reveal on scroll
+  document.querySelectorAll('.card, section').forEach((el,i)=>{
+    el.style.opacity = 0; el.style.transform = 'translateY(14px)';
+  });
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(ent=>{
+      if(ent.isIntersecting){
+        ent.target.style.transition = '600ms cubic-bezier(.2,.9,.2,1)';
+        ent.target.style.opacity = 1; ent.target.style.transform = '';
+        io.unobserve(ent.target);
+      }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll('.card, section').forEach(el => io.observe(el));
+
+
+for(let i=0;i<60;i++){
+  particles.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+1,dx:(Math.random()-0.5)*0.5,dy:(Math.random()-0.5)*0.5});
+}
+function draw(){
+  ctx.clearRect(0,0,w,h);
+  ctx.fillStyle="rgba(124,255,107,0.8)";
+  for(const p of particles){
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+    p.x+=p.dx; p.y+=p.dy;
+    if(p.x<0||p.x>w) p.dx*=-1;
+    if(p.y<0||p.y>h) p.dy*=-1;
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+
+</script>
+<div style="max-width:400px;margin:20px auto;padding:16px;border-radius:12px;background:#0f2a44;">
+    <h3>Ask Eduthon Bot 🤖</h3>
+    <div id="chatBox" style="height:200px;overflow-y:auto;border:1px solid #333;padding:10px;margin:10px 0;background:#071024;font-size:0.9rem;"></div>
+    <input id="question" placeholder="Ask about Eduthon 2025..." style="width:75%;padding:8px;border-radius:8px;border:none;">
+    <button onclick="askBot()" style="padding:8px 12px;border:none;border-radius:8px;background:#7CFF6B;color:#012;font-weight:bold;">Send</button>
+  </div>
+  
+  <script>
+  // Simple FAQ database
+  const faqs = [
+    { keywords:["date","when","time","start"], answer:"Eduthon 2025 will be held online from 22nd – 26th September 2025." },
+    { keywords:["mode","venue","place","location"], answer:"The event is completely online. Submission links and rounds will be shared on Discord." },
+    { keywords:["prize","money","pool"], answer:"The prize pool for Eduthon 2025 is ₹65,000." },
+    { keywords:["event","competitions","categories","list"], answer:"Events: XPlode (Gaming), PixelForge (Design), WebCraft (Web Dev), ShutterSoul (Photography), VerbalClash (Debate), AdRush (Ad-making)." },
+    { keywords:["register","registration","signup","join"], answer:"Registration is free via the official Google Form. All participants must also join the Discord server." },
+    { keywords:["deadline","submission","last date"], answer:"Submission deadline for PixelForge, WebCraft, and ShutterSoul is 25th September, 8:00 PM." },
+    { keywords:["discord","community","server"], answer:"Join the official Discord: https://discord.com/invite/pcZWbQukr5 (required for updates & submissions)." },
+    { keywords:["contact","email"], answer:"You can contact the organizers at finomyy@gmail.com." },
+    { keywords:["social","instagram","linkedin","youtube","website"], answer:"Follow Finomyy: Website finomyy.com • Instagram @finomyy • LinkedIn Finomyy • YouTube Finomyy." }
+  ];
+  
+  // Function to find answer
+  function findAnswer(q){
+    q = q.toLowerCase();
+    for(const faq of faqs){
+      if(faq.keywords.some(k=>q.includes(k))){
+        return faq.answer;
+      }
+    }
+    return "Sorry, I don't know the answer. Please check the event brochure or contact the organizers.";
+  }
+  
+  // Chat handler
+  function askBot(){
+    const q = document.getElementById("question").value.trim();
+    if(!q) return;
+    const box=document.getElementById("chatBox");
+    box.innerHTML += `<div><b>You:</b> ${q}</div>`;
+    document.getElementById("question").value="";
+  
+    const answer = findAnswer(q);
+    setTimeout(()=>{
+      box.innerHTML += `<div><b>Bot:</b> ${answer}</div>`;
+      box.scrollTop=box.scrollHeight;
+    }, 400); // typing delay effect
+  }
+
+  
+  </script>
+
+<!-- Background Blobs -->
+<div class="bg-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  
+  <!-- Particle Canvas -->
+  <canvas id="particles"></canvas>
+  
+  <style>
+  /* Blobs */
+  .bg-shapes {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    z-index: -2; /* behind everything */
+  }
+  
+  .shape {
+    position: absolute;
+    width: 200px; height: 200px;
+    background: rgba(124, 255, 107, 0.1);
+    border-radius: 50%;
+    animation: float 20s infinite ease-in-out;
+  }
+  
+  .shape:nth-child(1){ top:10%; left:20%; animation-duration: 18s; background: rgba(0,255,240,0.15);}
+  .shape:nth-child(2){ top:60%; left:70%; animation-duration: 22s; background: rgba(181,23,158,0.12);}
+  .shape:nth-child(3){ top:40%; left:40%; animation-duration: 26s; background: rgba(124,255,107,0.1);}
+  
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg) scale(1); }
+    50% { transform: translateY(-60px) rotate(180deg) scale(1.1); }
+    100% { transform: translateY(0) rotate(360deg) scale(1); }
+  }
+  
+  /* Particles Canvas */
+  #particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+  </style>
+  
+  <script>
+  // === Particle Background ===
+  const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+let w, h;
+let particles = [];
+let mouse = { x: null, y: null, radius: 120 }; // interaction radius
+
+// === SETTINGS ===
+const particleDensity = 120; // increase for more particles
+const colors = ["#7CFF6B","#00FFF0","#B5179E"];
+
+function resize(){
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener("resize", resize);
+
+// Track mouse position
+window.addEventListener("mousemove", e => {
+  mouse.x = e.x;
+  mouse.y = e.y;
+});
+
+// Create particles
+function initParticles(){
+  particles = [];
+  for(let i=0;i<particleDensity;i++){
+    particles.push({
+      x: Math.random()*w,
+      y: Math.random()*h,
+      r: Math.random()*2+1,
+      dx: (Math.random()-0.5)*0.6,
+      dy: (Math.random()-0.5)*0.6,
+      color: colors[Math.floor(Math.random()*colors.length)]
+    });
+  }
+}
+initParticles();
+
+// Draw & animate
+function draw(){
+  ctx.clearRect(0,0,w,h);
+  
+  for(const p of particles){
+    // Distance from mouse
+    let dx = p.x - mouse.x;
+    let dy = p.y - mouse.y;
+    let dist = Math.sqrt(dx*dx + dy*dy);
+
+    if(dist < mouse.radius){
+      // Push particles away
+      const angle = Math.atan2(dy, dx);
+      const force = (mouse.radius - dist) / mouse.radius;
+      const forceX = Math.cos(angle) * force * 4;
+      const forceY = Math.sin(angle) * force * 4;
+      p.x += forceX;
+      p.y += forceY;
+    }
+
+    // Update position
+    p.x += p.dx;
+    p.y += p.dy;
+
+    // Bounce from edges
+    if(p.x < 0 || p.x > w) p.dx *= -1;
+    if(p.y < 0 || p.y > h) p.dy *= -1;
+
+    // Draw
+    ctx.beginPath();
+    ctx.fillStyle = p.color;
+    ctx.globalAlpha = 0.8;
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fill();
+  }
+
+  requestAnimationFrame(draw);
+}
+draw();
+  </script>
+  
+  
+</body>
+
+</html>
+
